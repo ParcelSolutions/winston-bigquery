@@ -70,20 +70,19 @@ export class WinstonBigQuery extends Transport {
 			console.log(`loading credentials from ${credentialsJsonPath}`);
 		}
 		// if using a env var containing creds
-		if(process.env.GOOGLE_CREDENTIALS) 
-		   {
-			const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS || "{}")
-		   this.bigquery = new BigQuery({
-			   credentials : credentials,
-			   projectId : (credentials || {}).project_id
-			})
-		   }
-		else {
-
+		if (process.env.GOOGLE_CREDENTIALS) {
+			const credentials = JSON.parse(
+				process.env.GOOGLE_CREDENTIALS || '{}'
+			);
+			this.bigquery = new BigQuery({
+				credentials: credentials,
+				projectId: (credentials || {}).project_id
+			});
+		} else {
 			this.bigquery = new BigQuery({
 				keyFile: applicationCredentials
 			});
-		   }
+		}
 		const {create} = this.options;
 
 		if (create) {
