@@ -5,6 +5,9 @@
   "main": "dist/index.js",
   "author": "Pavel 'PK' Kaminsky <kaminsky.pavel@gmail.com> (http://www.pavel-kaminsky.com)",
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "engineStrict": true,
   "engines": {
     "node": ">= 10"
@@ -22,7 +25,8 @@
     "precommit": "lint-staged",
     "prepush": "npm run build",
     "prepublishOnly": "npm run build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "release": "release-it"
   },
   "homepage": "https://github.com/kaminskypavel/winston-bigquery",
   "dependencies": {
@@ -53,8 +57,8 @@
     "eslint-config-airbnb": "18.1.0",
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-css-modules": "2.11.0",
-    "eslint-plugin-jest": "23.8.1",
     "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jest": "23.8.1",
     "eslint-plugin-json": "2.1.0",
     "eslint-plugin-prettier": "3.1.2",
     "jest": "25.1.0",
