@@ -45,7 +45,7 @@ class WinstonBigQuery extends winston_transport_1.default {
         }
         // if using a env var containing creds
         if (process.env.GOOGLE_CREDENTIALS) {
-            const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS || "{}");
+            const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS || '{}');
             this.bigquery = new bigquery_1.BigQuery({
                 credentials: credentials,
                 projectId: (credentials || {}).project_id
