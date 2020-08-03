@@ -66,7 +66,10 @@ export class WinstonBigQuery extends Transport {
 		const credentialsJsonPath =
 			applicationCredentials || envGoogleAppCred || envServiceAccount;
 
-		if (env.isDevelopment() || env.isTest()) {
+		if (
+			(env.isDevelopment() || env.isTest()) &&
+			!process.env.GOOGLE_CREDENTIALS
+		) {
 			console.log(`loading credentials from ${credentialsJsonPath}`);
 		}
 		// if using a env var containing creds
